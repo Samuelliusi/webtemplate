@@ -1,3 +1,20 @@
+<?php
+$server ="localhost";
+$username="root";
+$password="";
+$database="web2";
+
+
+$conn = mysqli_connect($server,$username,$password,$database);
+
+$sqliQuery = mysqli_query($conn,"SELECT * FROM enrollment");
+
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,7 +38,7 @@
 	     <nav>
 			<ul>
 				<li>
-					<a href="student.html">
+					<a href="student.php">
 						<span><i class="fa fa-group"></i></span>
 						<span>students</span>
 					</a>
@@ -58,32 +75,25 @@
 									<th>email</th>
 									<th>Gender</th>
 									<th>course</th>
-									<th>enrolled on</th>
 									<th>Action</th>
 								</tr>
 							</thead>
 							<tbody>
-								<tr>
-									<td>1.</td>
-									<td>Samuel luis</td>
-									<td>0701445589</td>
-									<td>luizliusi313@gmail.com</td>
-									<td>Male</td>
-									<td>Web design</td>
-									<td>23/6/2021</td>
-									<td>
-                                        <a href="a" class="btn btn-primary btn-sm">
-											<i class="fa fa-edit"></i>
-										</a>
-										<a href="a" class="btn btn-info btn-sm">
-										<i class="fa fa-eye"></i>
-										</a>
-										<a href="a" class="btn btn-danger btn-sm">
-											<i class="fa fa-trash"></i>
-										</a>
-									</td>
-								</tr>
-								
+								<?php while($fetchRecord = mysqli_fetch_array($sqliQuery)) { ?>
+									<tr>
+										   <td><?php echo $fetchRecord['no'] ?></td>
+										   <td><?php echo $fetchRecord['fullname'] ?></td>
+										   <td><?php echo $fetchRecord['phonenumber'] ?></td>
+										   <td><?php echo $fetchRecord['email'] ?></td>
+										   <td><?php echo $fetchRecord['gender'] ?></td>
+										   <td><?php echo $fetchRecord['course'] ?></td>
+										   <td>
+											   <a href="">Edit</a>
+											   <a href="">Veiw</a>
+											   <a href="">Delete</a>
+								           </td>	 
+								    </tr>
+								<?php }?>		 
 							</tbody>
 						 </table>
 					</div>
