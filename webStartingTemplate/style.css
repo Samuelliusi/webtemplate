@@ -8,14 +8,14 @@ body{
 
 .header{
     position: absolute;
-    background-color: #FF4500;
+    background-color: #F57E20;/*#ff4500;*/
     height: 50px;
     width: 100%;
     z-index: 5;
 }
 .sidebar{
     position: absolute;
-    background-color: #7fc242;
+    background-color: #07B00D;
     height: 100vh;
     width: 100%;
     z-index: 4;
