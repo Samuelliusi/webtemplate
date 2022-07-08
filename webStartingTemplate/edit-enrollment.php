@@ -10,7 +10,32 @@ while($fetchUser= mysqli_fetch_array($queryuser))
     $gender=$fetchUser['gender'];
 
 }
+// update use records
 
+if( isset($_POST["updaterecords"]) )
+{
+   //fetch from data
+   $name=$_POST["fullname"];
+   $phonenumber=$_POST["phonenumber"];
+   $emailaddress=$_POST["email"];
+   $formgender=$_POST["gender"];
+   $formcourse=$_POST["course"];
+
+
+   //update records
+   $updateQuery = mysqli_query($conn,
+   "UPDATE enrollment SET fillname='$name',phonenumber='$phonenumber',
+   email='$emailaddress',gender='$formgender',course='$formcourse' WHERE no '".$_GET['id']."' ");
+
+   if($updateQuery)
+   {
+       echo"Data updated";
+   }
+   else
+   {
+      echo"error occured";
+   }
+}
 ?>
 
 
@@ -83,7 +108,7 @@ while($fetchUser= mysqli_fetch_array($queryuser))
         </div>
           <div class="row">
             <div class="col-lg-3">
-              <button class="btn btn-primary" name="submitButton">SubmitButton</button> 
+              <button class="btn btn-primary" name="updaterecords">SubmitButton</button> 
             </div>
           </div> 
         </div>
