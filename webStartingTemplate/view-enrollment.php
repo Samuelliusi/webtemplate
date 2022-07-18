@@ -3,13 +3,14 @@
  require_once('logics/dbconnection.php');
  require_once('includes\navbar.php');
  $sqlifetchEnrollment = mysqli_query($conn,
-         "SELECT * FROM enrollment WHERE number='".$_GET['id']."' ");
+         "SELECT * FROM contactus WHERE number='".$_GET['id']."' ");
  while($featchStudent= mysqli_fetch_array($sqlifetchEnrollment))
  {
-    $fullname = $featchStudent['fullname'];
+    $fullname = $featchStudent['firstname'];
+    $fullname = $featchStudent['lastname'];
     $email = $featchStudent['email'];
     $phone= $featchStudent['phonenumber'];
-    $course=$featchStudent['course'];
+    $course=$featchStudent['created_at'];
 }
 ?>
 <!DOCTYPE html>
@@ -33,9 +34,9 @@
                     </div>
                     <div class ="card-body">
                         <ul class="list-group">
-                        <li class="list-group-item">Fullname: <span class="float-end badge bg-primary"><?php echo $fullname ?></span></li>
-                        <li class="list-group-item">email: <span class="float-end badge bg-secondary"><?php echo $email ?></span></li>
-                        <li class="list-group-item">phonenumber: <span class="float-end badge bg-danger"><?php echo $phone ?></span> </li>
+                        <li class="list-group-item">no: <span class="float-end badge bg-primary"><?php echo $no ?></span></li>
+                        <li class="list-group-item">firsname: <span class="float-end badge bg-secondary"><?php echo $firstname ?></span></li>
+                        <li class="list-group-item">lastname: <span class="float-end badge bg-danger"><?php echo $lastname ?></span> </li>
                         </ul>
                     </div>
                 </div>
