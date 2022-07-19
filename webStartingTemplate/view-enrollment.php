@@ -3,7 +3,7 @@
  require_once('logics/dbconnection.php');
  require_once('includes\navbar.php');
  $sqlifetchEnrollment = mysqli_query($conn,
-         "SELECT * FROM contactus WHERE number='".$_GET['id']."' ");
+         "SELECT * FROM contactus WHERE no='".$_GET['id']."' ");
  while($featchStudent= mysqli_fetch_array($sqlifetchEnrollment))
  {
     $fullname = $featchStudent['firstname'];
@@ -41,6 +41,14 @@
                     </div>
                 </div>
             </div>
+            <div class="col-lg-6">
+                <div class="card">
+                   <div class="card-header bg-dark text-white text-center">
+                    <h4 class="card-tittle">
+                        personal information
+                    </h4>
+                </div>
+            </div>             
         </div>
     </div>   
     
