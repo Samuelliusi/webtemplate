@@ -65,7 +65,7 @@ $sqliQuery = mysqli_query($conn,"SELECT * FROM enrollment");
 							</tbody>
 						 </table>
 					</div>
-
+			    </div>
 			</div>
 		 </div>
 	</div>

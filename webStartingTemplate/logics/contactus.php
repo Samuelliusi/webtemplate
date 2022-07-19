@@ -48,29 +48,24 @@ $sql = mysqli_query($conn, "SELECT * FROM contactus");
                                         <td><?php echo $fetchRecords['email'] ?></td> 
                                         <td><?php echo $fetchRecords['massage'] ?></td>
                                         <td><?php echo $fetchRecords['created_at'] ?></td>
+                                        <a href="edit-enrollment.php?id=<?php echo $fetchRecord['no'] ?>" class="btn btn-primary btn-sm">
+												  <i class="fa fa-edit"></i>
+											   </a>
+											   <a href="#" class="btn btn-info btn-sm">
+												 <i class="fa fa-eye"></i>
+											   </a>
+											   <a href="#" class="btn btn-danger">
+												 <i class="fa fa-trash"></i>
+											   </a>
+								           </td>	 
                                     </tr>       
                                 <?php 
                             }?>
                             </tbody>
                         </table>
                     </div>
-                    <div class="card-footer"></div>
             </div>
         </div>
-     
-
-
-
-
-
-
-
-
-
-
-
-
-            
     </div>
    	<!-- All our code. write here   -->
 	
